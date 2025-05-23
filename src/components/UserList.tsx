@@ -13,7 +13,7 @@ const UserList: React.FC = () => {
   }
 
   return (
-    <section className="container mt-5">
+    <section className="container my-5">
       <h2>Users List</h2>
       <div className="row">
         {users.map((user) => {
