@@ -1,3 +1,4 @@
+import { useState } from "react";
 import UserCard from "./UserCard";
 
 const users = [
@@ -7,9 +8,10 @@ const users = [
 ];
 
 const UserList: React.FC = () => {
+  const [clickedUser, setClickedUser] = useState<string | null>(null); 
 
   const handleClick = (name: string) => {
-    console.log(`Hello ${name}`)
+    setClickedUser(name);
   }
 
   return (
@@ -27,6 +29,11 @@ const UserList: React.FC = () => {
           </div>
           )
       })}
+        {clickedUser && (
+        <p className="alert alert-primary my-3">
+          Hello, {clickedUser}!
+        </p>
+        )}
       </div>
     </section>
   )

@@ -8,11 +8,11 @@ interface UserCardProps {
 
 const UserCard: React.FC<UserCardProps> = ({name, age, onClick}) => {
 
-  const [message, setMessage] = useState<string>("");
+  // const [message, setMessage] = useState<string>("");
   
   const handleClick = () => {
     onClick(name);
-    setMessage(`Hello, ${name}!`)
+    // setMessage(`Hello, ${name}!`)
   }
 
   return (
@@ -21,9 +21,9 @@ const UserCard: React.FC<UserCardProps> = ({name, age, onClick}) => {
       className="card-body">
         <h5 className="card-title">{name}</h5>
         <h6 className="card-title">{age}</h6>
-        {message && (
+        {/*message && (
           <p className="card-text mt-2">{message}</p>
-        )}
+        )*/}
       </div>
     </article>
   )
