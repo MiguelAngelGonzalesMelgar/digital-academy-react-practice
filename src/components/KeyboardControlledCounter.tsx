@@ -20,7 +20,7 @@ const KeyboardControlledCounter: React.FC = () => {
           <div className="card-body">
             <h3 className="card-title">{count}</h3>
 
-            <button className="btn btn-succes m-1"
+            <button className="btn btn-success m-1"
             onClick={handleIncrement}
             >Increment</button>
             <button className="btn btn-warning m-1"
