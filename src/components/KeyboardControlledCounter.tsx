@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const KeyboardControlledCounter: React.FC = () => {
   const [count, setCount] = useState<number>(0)
@@ -11,6 +11,26 @@ const KeyboardControlledCounter: React.FC = () => {
   const handleDrecrement = () => {
     setCount(prev => (prev > 0 ? prev - 1 : 0));
   }
+
+  useEffect(() => {
+    // Keydown handler
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowUp") {
+        handleIncrement();
+      } else if (event.key === "ArrowDown") {
+        handleDrecrement();
+      }
+    };
+
+    // Window event 
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Clean up the event
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [])
+
   
   return (
     <section className="container my-3 text-center">
@@ -29,6 +49,12 @@ const KeyboardControlledCounter: React.FC = () => {
           </div>
           </div>
       </div>
+          <p className="fs-5 mt-2">
+            Click to increment or decrement count. 
+          </p>
+          <p>
+            <strong>Try pressing: </strong><kbd>ArrowUp</kbd> <strong> or: </strong> <kbd>ArrowDown</kbd>
+            </p>
     </section>
   )
 }

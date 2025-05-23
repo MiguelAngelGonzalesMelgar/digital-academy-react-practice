@@ -16,7 +16,7 @@ const UserCard: React.FC<UserCardProps> = ({name, age, onClick}) => {
   }
 
   return (
-    <article className="card" style={{width: "18rem;"}}>
+    <article className="card" style={{width: "18rem"}}>
       <div onClick={handleClick} 
       className="card-body">
         <h5 className="card-title">{name}</h5>
