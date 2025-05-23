@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 
-class UserList extends Component {
+type User = {
+  id: number;
+  name: string;
+};
+
+type State = {
+  users: User[];
+  loading: boolean;
+};
+
+
+class UserList extends Component<{}, State> {
   constructor(props) {
     super(props);
     this.state = {
