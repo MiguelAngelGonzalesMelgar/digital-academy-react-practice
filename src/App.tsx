@@ -2,7 +2,7 @@ import ControlledUncontrolledForm from "./components/ControlledUncontrolledForm"
 
 function App() {
   return (
-    <section>
+    <section className="container">
       <h1>React Basics Practice</h1>
     <ControlledUncontrolledForm/>
     </section>

@@ -32,28 +32,34 @@ const ControlledUncontrolledForm: React.FC = () => {
       <h3>Controlled vs Uncontrolled Inputs</h3>
       <form onSubmit={handleSubmit}>
         {/* Controlled input */}
-        <div>
-        <label htmlFor="controlled-input">
-          Controlled Input:
-        </label>
-        <input id="controlled-input" 
-        type="text" 
-        value={controlledInput}
-        onChange={handleOnChange}
-        />
+        <div className="form-group mb-3">
+          <label htmlFor="controlled-input">
+            Controlled Input:
+          </label>
+          <input id="controlled-input" 
+          className="form-control mt-2"
+          type="text" 
+          value={controlledInput}
+          onChange={handleOnChange}
+          />
         </div>
 
       {/* Uncontrolled input */}
-        <div>
-      <label htmlFor="uncontrolled-input">
-        Uncontrolled Input:
-      </label>
-      <input id="uncontrolled-input" 
-      type="text"
-      ref={uncontrolledInputRef}
-      />
+        <div className="form-group mb-3">
+          <label htmlFor="uncontrolled-input">
+            Uncontrolled Input:
+          </label>
+          <input id="uncontrolled-input"
+          className="form-control mt-2"
+          type="text"
+          ref={uncontrolledInputRef}
+          />
         </div>
-        <button type="submit">Log Input Values</button>
+        <div className="d-flex justify-content-end">
+        <button type="submit"
+        className="btn btn-success"
+        >Log Input Values</button>
+        </div>
       </form>
     </>
   );
